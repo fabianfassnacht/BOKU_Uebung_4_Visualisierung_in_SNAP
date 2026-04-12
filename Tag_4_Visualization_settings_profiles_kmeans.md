@@ -57,11 +57,15 @@ Als nächsten Schritt, werden wir die Spannweite der visualisierten Pixelwerte (
 
 Diese Einstellung kann in manchen Fällen tatsächlich sehr relevant sein. Ein Beispiel hierfür sind Gewässer. Wie wir bereits in der Vorlesung gehört haben erscheinen Gewässer in Satellitenbildern sehr dunkel im Vergleich zu anderen Landbedeckungsklassen, da Wasser nur sehr wenig elektromagnetische Strahlung reflektiert. In unserem Satellitenbild erscheint z.B. die Donau in den aktuellen Visualsierungseinstellungen (Range zwischen 0.046xx und 0.26) homogen sehr dunkel (in Abbildung 4 wurde an einen Ausschnitt der Donau herangezoomt). Wenn wir nun die Visualisierungeinstellungen auf sehr kleine Pixelwerte einschränken, in meinem Fall zwischen Werte von **0.03 und 0.05** so ändert sich dieser Eindruck stark. Plötzlich ist die Donau nicht mehr homogen schwarz sondern es werden Muster und Gradienten sichtbar. Was ebenfalls auffällt ist, dass fast alle umgebenden Gebiete, die nicht Wasser repräsentieren, nun in weiss dargestellt sind. Dies ist plausibel, da ihre Pixelwerte höher als der gewählte Maximalwert von 0.05 liegen. 
 
-![Abbildung 5: Visualisierung eines Donauauschnittes mit einer Visualisierungseinstellung, die auf die niedrigen Reflenktanzen von Wasser angepasst sind](Fig_05.png)
+![Abbildung 5: Visualisierung eines Donauauschnittes mit einer Visualisierungseinstellung, die auf die niedrigen Reflektanzen von Wasser angepasst sind](Fig_05.png)
 
-Angenommen wir würden uns in unserer Forschung oder unserer Arbeit vor allem für Wasser interessieren und wir wären mit den gefundenen Einstellungen nun sehr zufrieden, so könnten wir die aktuellen Range-Werte als sogenannte "Palette" abspeichern. Dafür müssen wir dann den Button markiert mit 7 in Abbildung 3 klicken. In meinem Fall, habe ich dies getan und das File als "water_fabi.cpd" gespeichert. Diese Datei ist nichts anderes als ein Text-File welches die aktuellen Range-Werte (markiert mit 1 in Abbildung 6) und noch ein paar weitere Informationen enthält (siehe Abbildung 6).
+**Abbildung 5: Visualisierung eines Donauauschnittes mit einer Visualisierungseinstellung, die auf die niedrigen Reflektanzen von Wasser angepasst sind**
+
+Angenommen wir würden uns in unserer Forschung oder unserer Arbeit vor allem für Wasser interessieren und wir wären mit den gefundenen Einstellungen nun sehr zufrieden, so könnten wir die aktuellen Range-Werte als sogenannte "(Farb-)Palette" abspeichern. Dafür müssen wir den Button markiert mit 7 in Abbildung 3 klicken. In meinem Fall, habe ich dies getan und das File als "water_fabi.cpd" gespeichert. Diese Datei ist nichts anderes als ein Text-File welches die aktuellen Range-Werte (markiert mit 1 in Abbildung 6) und noch ein paar weitere Informationen enthält (siehe Abbildung 6).
 
 ![Abbildung 6: Inhalte des Paletten-Files in SNAP](Fig_06.png)
+
+**Abbildung 6: Inhalte des Paletten-Files in SNAP**
 
 Als letzte Einstellung für Basiseinstellungen drücken wir nun den **Inversion**-Button, welcher die Zuordnung der Pixelwerte zu den Grauwerten invertiert. Konkret werden standardmäßig hohe Pixelwerte mit hellen Farben (nahe weiss) dargestellt und niedrige Pixelwerte mit dunklen Farben (nahe schwarz) dargestellt. Durch die Invertierung wird dies umgekehrt.
 
@@ -69,29 +73,37 @@ In unserem Fall bedeutet dies, dass nun alle Bereiche, die nicht Wasser sind in 
 
 ![Abbildung 7: Visualisierungseindruck nach Anwendung der Invertierung](Fig_07.png)
 
+**Abbildung 7: Visualisierungseindruck nach Anwendung der Invertierung]**
+
 Wir setzen nun die Visualisierungseinstellungen wieder zurück indem wir den **Reset**-Button drücken und wir zoomen auch wieder heraus, um das gesamte Satellitenbild zu sehen. Dann wählen wir im Visualisierungsmenü den Reiter **"Sliders"** welcher uns zum Menü führt, welches in Abbildung 8 dargestellt ist.
 
 ![Abbildung 8: Das "Sliders"-Menü](Fig_08.png)
 
+**Abbildung 8: Das "Sliders"-Menü**
+
 Die zentrale Darstellung in diesem Menü ist das Histogramm (markiert mit 1 in Abbildung 8). Das Histogram zeigt die Häufigkeit (y-Achse) der verschiedenen Pixelwertbereiche (x-Achse) des aktuell dargestellten Bandes dar. Das Histogram wird dabei basierend auf einer repräsentativen Stichprobe aller Pixel des Bildes geschätzt. Unter dem Histogram ist der Farbverlauf dargestellt, der zur Visualisierung des Bildes führt. Die "Slider" (markiert mit blauen Boxen in Abbildung 8) zeigen jeweils die Farben an, die für die jeweilige Pixelwerten verwendet werden. Pixelwerte, die dazwischen liegen werden in diesem Fall dementsprechend linear skaliert.
 
-Wir sehen, dass in unserem geladenen Band 5 eine mehr oder weniger normale Verteilung zeigen mit relativ wenigen sehr niedrigen und sehr hohen Werten und einer großen Anzahl an mittleren Pixelwerten. Gleichzeitig sehen wir aber auch, dass sowohl auf der linken als auch der rechten Seite des Histogramm es so aussieht, als ob die Wertebereiche abgeschnitten wurden. Dies ist tatsächlich auch der Fall und dieses Vorgehen, dass die extremen Enden der Verteilung ("Ausreißer") in der Visualisierung nicht berücksichtigt werden, ist ein relativ gängiges Vorgehen.
+Wir sehen, dass in unserem geladenen Band 5 die Pixelwerte eine mehr oder weniger normale Verteilung zeigen mit relativ wenigen sehr niedrigen und sehr hohen Werten und einer großen Anzahl an mittleren Pixelwerten. Gleichzeitig sehen wir aber auch, dass es sowohl auf der linken als auch der rechten Grenze des Histogramm so aussieht, als ob die Wertebereiche abgeschnitten wurden. Dies ist tatsächlich auch der Fall und dieses Vorgehen, dass die extremen Enden der Verteilung ("Ausreißer") in der Visualisierung nicht berücksichtigt werden, ist relativ gängig.
 
-Unter der Slider-Ansicht, gibt es auch mehrere Buttons, die es ermöglichen die Art und Weise, wie die Werteverteilung begrenzt wird, automatisch festzulegen. Konkret gibt es Button, die die Begrenzung über plus minus 2 bzw. 3 Standartabweichungen vom Mittelwert (der Stichprobe von Pixelwerten, die benutzt wurden, um das Histogramm zu berechnen) bestimmen (Button markiert mit 2 in Abbildung 8 und der Button darunter) oder auch ein Button, der die volle Range verwendet (d.h., keine Beschneidung der Begrenzung) (markiert mit 3 in Abbilldung 8). Klicken Sie gerne auf die Buttons und schauen SIe sich an, wie sich das Histogram verändert. Über den **Reset** Button, können sie die ursprüngliche Darstellung immer wiederherstellen.
+Unter der Slider-Ansicht, gibt es auch mehrere Buttons, die es ermöglichen die Art und Weise, wie die Werteverteilung begrenzt wird, automatisch festzulegen. Konkret gibt es zwei Buttons, die die Ober und die Untergrenze der Ramge als plus und minus 2 bzw. 3 Standartabweichungen vom Mittelwert (der Stichprobe von Pixelwerten, die benutzt wurden, um das Histogramm zu berechnen) definieren (Button markiert mit 2 in Abbildung 8 und der Button darunter). Dazu gibt es einen weiteren Button, der die volle Range verwendet (d.h., keine Beschneidung der Begrenzung, sondern festlegen der oberen und unteren Grenze basierend auf den minimalen und maximalen Pixelwerten) (markiert mit 3 in Abbilldung 8). Klicken Sie gerne auf die Buttons und schauen Sie sich an, wie sich das Histogram verändert. Über den **Reset** Button, können sie die ursprüngliche Darstellung immer wiederherstellen.
 
-Die Darstellung des Histogramm ändert sich auch, wenn wir auf das **"Basic"** Menü zurückwechseln und die Range dort manuell ändern. In Abbildung 9 wird die Situation dargestellt, wenn man den Max-Wert im Basic Menü auf 0.27 ändert.
+Die Darstellung des Histogramm ändert sich auch, wenn wir auf das **"Basic"** Menü zurückwechseln und die Range dort manuell ändern. In Abbildung 9 wird dargestellt, wie das Histogramm aussieht, wenn man den Max-Wert im Basic Menü auf 0.27 ändert.
 
 ![Abbildung 9: Das "Sliders"-Menü nach Anpassung des Maximalwertes im Basic-Menü](Fig_09.png)
 
-Schließlich ist noch erwähnenswert, dass es möglich ist über einen Rechtsklick auf den Farbgradienten und dann der Wahl "Add new Slider" (siehe Abbildung 10) zusätzliche Slider zu erstellen und damit auch Skalierungen mit unterschiedlichen "Steigungen" zu ermöglichen. D.h., man könnte z.B. die niedrigen Pixelwere stärker in der Visualisierung differenzieren (in dem in Abbildung 9 der mittlere Slider nach rechts geschoben wird) als die hohen Pixelwerte (falls das für meinen jeweiligen Anwendungsfall interessant wäre). Über das Hinzufügen von weiteren Slidern, kann die Visualisierung immer weiter differenziert werden.
+**Abbildung 9: Das "Sliders"-Menü nach Anpassung des Maximalwertes im Basic-Menü**
 
-![Abbildung 10: Das "Sliders"-Menü nach Hinzufügen weiterer Slider](Fig_10.png)
+Schließlich ist noch erwähnenswert, dass es möglich ist über einen Rechtsklick auf den Farbgradienten und der anschließend Auswahl "Add new Slider" (siehe Abbildung 10) zusätzliche Slider zu erstellen und damit auch Skalierungen mit unterschiedlichen "Steigungen" zu ermöglichen. D.h., man könnte z.B. die niedrigen Pixelwere stärker in der Visualisierung differenzieren (in dem in Abbildung 9 der mittlere Slider nach links geschoben wird) als die hohen Pixelwerte (falls das für meinen jeweiligen Anwendungsfall interessant wäre). Über das Hinzufügen von weiteren Slidern, kann die Visualisierung immer weiter differenziert werden.
 
-Abschließend wird hier noch darauf hingewiesen, dass bei einer Echtfarbendarstellung bzw. eine Falschfarbendarstellung mit drei Kanälen, die Visualisierungseinstellungen prinzipiell identisch sind, dann aber für alle drei Farbkanäle der Visualisierung (rot, grün. blau) durchgeführt werden müssen (siehe Abbildung 11).
+![Abbildung 10: Das "Sliders"-Menü nach dem Hinzufügen weiterer Slider](Fig_10.png)
+
+**Abbildung 10: Das "Sliders"-Menü nach dem Hinzufügen weiterer Slider**
+
+Abschließend wird hier noch darauf hingewiesen, dass bei einer Echtfarbendarstellung bzw. eine Falschfarbendarstellung mit drei Kanälen, die Visualisierungseinstellungen prinzipiell identisch sind, dann aber für alle drei Farbkanäle der Visualisierung (rot, grün. blau) durchgeführt werden müssen (siehe Abbildung 11). Sie können dies gerne einmal ausprobieren. Bei der RGB-Darstellung führt z.B. die Verwendung der 2 Standartabweichungsoption bei allen drei Kanälen zu einer verbesserten farblichen Darstellung des Satellitenbildes.
 
 ![Abbildung 11: Visualisierungseinstellungen für eine RGB-Darstellung](Fig_11.png)
 
-Dies wird an dieser Stelle nicht weiter diskutiert, wird aber in den Hausaufgaben für diese Woche wieder aufgegriffen.
+**Abbildung 11: Visualisierungseinstellungen für eine RGB-Darstellung**
 
 ## Teil 2 - Anzeigen von Spektren in SNAP
 
