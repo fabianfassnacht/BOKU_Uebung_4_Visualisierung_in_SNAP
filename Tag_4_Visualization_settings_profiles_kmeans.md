@@ -31,7 +31,7 @@ Dann navigieren wir zum Ordner in dem die Sentinel-2 Daten gespeichert sind und 
 
 und bestätigen mit **"open"**.
 
-Wir öffnen nur die Ordnerstrukturen des geladenen Bildes (wie bereits in früheren Tutorials), und lassen uns alle Bänder des Bildes anzeigen. Wir öffnen die Visualisierung für ein einzelnes Band in dem wir das Band 5 doppelklicken (markiert mit 1 in Abbildung 2).
+Wir öffnen nur die Ordnerstrukturen des geladenen Bildes (wie bereits in früheren Tutorials), und lassen uns alle Bänder des Bildes im Produkt anzeigen. Wir öffnen die Visualisierung für ein einzelnes Band, konkret Band 5, indem wir es doppelklicken (markiert mit 1 in Abbildung 2).
 
 ![Abbildung 2: Laden von Band 5 des Sentinel-2 Satellitenbildes](Fig_02.png)
 
