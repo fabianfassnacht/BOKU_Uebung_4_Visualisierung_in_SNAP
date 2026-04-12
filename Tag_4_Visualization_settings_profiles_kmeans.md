@@ -51,13 +51,13 @@ Wir beginnen mit zwei Optionen, die sehr leicht anzuwenden sind. Die erste ist d
 
 Als nächsten Schritt, werden wir die Spannweite der visualisierten Pixelwerte (**Range** - markiert mit 2 in Abbildung 3) verändern. Hierfür können wir z.B. den Max-Wert **von 0.16xxx auf 0.26** verändern. Dies hat zur Folge, dass das Bild insgesamt dunkler erscheint. Durch die Vergrößerung der Range auf einen Bereich in dem sogut wie keine Pixel mehr entsprechende Werte aufweisen (es gibt kaum Pixel mit einem Pixelwert größer 0.16, deswegen wurden die Standartsettings von SNAP so gewählt) werden die existierenden "hellen" Pixel (die Pixel mit den höchsten Werten im Bild) nun mit einer etwas dunkleren Grauton dargestellt, wohingegen die sehr hellen Grautöne (nahe weiss) gar nicht mehr vorkommen, da diese Werte nun für Pixel mit Werten nahe 0.26 reserviert sind, die faktisch sogut wie nicht vorkommen im Bild (mehr Infos dazu kommen gleich noch).
 
-![Abbildung 4:  Visualisierung eines Donauauschnittes mit einer normalen Visualisierungseinstellung](Fig_04.png)
+![Abbildung 4:  Visualisierung eines Donauauschnittes mit einer automatisch gewählten Visualisierungseinstellung](Fig_04.png)
 
 **Abbildung 4:  Visualisierung eines Donauauschnittes mit einer normalen Visualisierungseinstellung**
 
 Diese Einstellung kann in manchen Fällen tatsächlich sehr relevant sein. Ein Beispiel hierfür sind Gewässer. Wie wir bereits in der Vorlesung gehört haben erscheinen Gewässer in Satellitenbildern sehr dunkel im Vergleich zu anderen Landbedeckungsklassen, da Wasser nur sehr wenig elektromagnetische Strahlung reflektiert. In unserem Satellitenbild erscheint z.B. die Donau in den aktuellen Visualsierungseinstellungen (Range zwischen 0.046xx und 0.26) homogen sehr dunkel (in Abbildung 4 wurde an einen Ausschnitt der Donau herangezoomt). Wenn wir nun die Visualisierungeinstellungen auf sehr kleine Pixelwerte einschränken, in meinem Fall zwischen Werte von **0.03 und 0.05** so ändert sich dieser Eindruck stark. Plötzlich ist die Donau nicht mehr homogen schwarz sondern es werden Muster und Gradienten sichtbar. Was ebenfalls auffällt ist, dass fast alle umgebenden Gebiete, die nicht Wasser repräsentieren, nun in weiss dargestellt sind. Dies ist plausibel, da ihre Pixelwerte höher als der gewählte Maximalwert von 0.05 liegen. 
 
-![Abbildung 5: Visualisierung eines Donauauschnittes mit einer Visualisierungseinstellung, die auf die niedrigen Reflektanzen von Wasser angepasst sind](Fig_05.png)
+![Abbildung 5: Visualisierung eines Donauauschnittes mit einer Visualisierungseinstellung, die auf die niedrigen Reflektanzen von Wasser angepasst ist](Fig_05.png)
 
 **Abbildung 5: Visualisierung eines Donauauschnittes mit einer Visualisierungseinstellung, die auf die niedrigen Reflektanzen von Wasser angepasst sind**
 
