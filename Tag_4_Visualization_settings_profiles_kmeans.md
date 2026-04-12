@@ -108,13 +108,13 @@ Abschließend wird hier noch darauf hingewiesen, dass bei einer Echtfarbendarste
 ## Teil 2 - Anzeigen von Spektren in SNAP
 
 ### Lernziele
-In diesem Teil des Tutorial lernen Sie wie Sie in SNAP Spektren einzelner Pixel visualisieren können. Zusätzlich schauen wir uns an, wie Wellenlängenbereiche definiert werden können, wenn diese bei einem Satellitenbild noch nicht in den Metadaten enthalten sind.
+In diesem Teil des Tutorial lernen Sie wie Sie in SNAP Spektren einzelner Pixel sowie mehrerer Pins visualisieren können. Zusätzlich schauen wir uns an, wie Wellenlängenbereiche von spektralen Bändern definiert werden können, wenn diese bei einem Satellitenbild noch nicht in den Metadaten enthalten sind.
 
 ### Visualisierung von Spektren
 
-Spektren sind eine essenzielle Darstellung von spektralen Messungen, sowohl im Labor gemessenen Daten als auch von Daten, die mit passiven, optischen Fernerkundungssensoren erhoben wurden. Ein Spektrum visualisiert die gemessene zurückgestrahlte eletromagnetische Strahlung eines Objekt in verschiedenen Wellenlängenbereichen. D.h., auf der x-Achse befindet sich die Wellenlänge und auf der y-Achse die gemessene Reflektanz (in % der eingefallenen Strahlung). Man spricht in der Regel erst dann von einem Spektrum, wenn Messungen in mehr als einer Wellenlänge durchgeführt wurden. Aber auch wenn z.B. nur Spektralinformationen in drei Kanälen/Bändern vorliegen wie auch bei einer handelsüblichen Foto-Kamera, kann man theoretisch bereits von einem Spektrum sprechen.
+Spektren sind eine essenzielle Darstellungsform von spektralen Messungen. Diese umfassen sowohl im Labor gemessene Daten als auch Daten, die mit passiven, optischen Fernerkundungssensoren erhoben wurden. Ein Spektrum visualisiert die gemessene zurückgestrahlte eletromagnetische Strahlung eines Objekts in verschiedenen Wellenlängenbereichen. D.h., auf der x-Achse befindet sich die Wellenlänge und auf der y-Achse die gemessene Reflektanz (in % der eingefallenen Strahlung). Man spricht in der Regel erst dann von einem Spektrum, wenn Messungen in mehr als einer Wellenlänge durchgeführt wurden. Aber auch wenn z.B. nur Spektralinformationen in drei Kanälen/Bändern vorliegen wie auch bei einer handelsüblichen Foto-Kamera, kann man theoretisch bereits von einem Spektrum sprechen.
 
-In SNAP, ist eine Voraussetzung für die Darstellung von Spektren, dass die Wellenlängenbereiche der Bänder in den Metadaten des Datensatzes definiert sind. In diesem Tutorial ist dies für die Sentinel-2 Daten der Fall, für die Landsatdaten nicht. Im Folgenden, werden wir zuerst lernen wie wir uns für die Sentinel-2 Daten Spektren anzeigen lassen können, und danach was wir tun müssen, um dies auch für die Landsat-Daten zu ermöglichen.
+In SNAP, ist eine Voraussetzung für die Darstellung von Spektren, dass die Wellenlängenbereiche der Bänder in den Metadaten des Datensatzes definiert sind. In diesem Tutorial ist dies für die Sentinel-2 Daten der Fall, für die Landsat-Daten nicht. Im Folgenden, werden wir zuerst lernen wie wir uns für die Sentinel-2 Daten Spektren anzeigen lassen können, und danach was wir tun müssen, um dies auch für die Landsat-Daten zu ermöglichen.
 
 Wenn die Wellenlängen der Bänder bereits definiert sind, ist die Darstellung von Spektren in SNAP relativ einfach möglich. Hierfür öffnen wir (falls nicht bereits geschehen) zuerst das Sentinel-2 Satellitenbild und erstellen dann eine RGB-Visualisierung via 
 
@@ -122,6 +122,7 @@ Wenn die Wellenlängen der Bänder bereits definiert sind, ist die Darstellung v
 
 ![Abbildung 12: Aufrufen des Spektrum Views](Fig_12.png)
 
+**Abbildung 12: Aufrufen des Spektrum Views**
 
 Dann wählen wir - wie in Abbildung 12 dargestellt - im Hauptmenü
 
@@ -131,19 +132,25 @@ Daraufhin öffnet sich ein neues Fenster mit einem Hinweis, der darüber informi
 
 ![Abbildung 13: Das Spektrum-View Tool mit Warnhinweis](Fig_13.png)
 
+**Abbildung 13: Das Spektrum-View Tool mit Warnhinweis**
+
 Wenn wir den Hinweis bestätigt haben, geht das Fenster automatisch in den Modus über in dem immer für den Pixel, der gerade vom Maus-Cursor bedeckt wird, das entsprechende Spektrum angezeigt wird (Abbildung 14).
 
 ![Abbildung 14: Das Spektrum-View Tool](Fig_14.png)
 
+**Abbildung 14: Das Spektrum-View Too**
 
-Sie können nun gerne mit dem Cursor auf verschiedene Landbedeckungsklassen gehen und dabei zusehen wie sich das Spektrum verändert. Nutzen Sie die Zoom-Funktion um die Positionen genauer auswählen zu können. Im aktuellen Modus wird nun immer nur ein einzelnes Spektrum angezeigt, welches sich sofort verändert, wenn der Mauscursor bewegt wird.
+Sie können nun gerne den Mauscursor auf verschiedene Landbedeckungsklassen bewegen und dabei zusehen wie sich das Spektrum verändert. Nutzen Sie die Zoom-Funktion bzw. das Mausrad, um die Positionen im Satellitenbild genauer auswählen zu können. Im aktuellen Modus wird nun immer nur ein einzelnes Spektrum angezeigt, welches sich sofort verändert, wenn der Mauscursor bewegt wird.
 
 ![Abbildung 15: Spektren für mehrere Pins, die drei Landbedeckungsklassen abdecken](Fig_15.png)
 
+**Abbildung 15: Spektren für mehrere Pins, die drei Landbedeckungsklassen abdecke**
+
 Um kontrolliertere Analysen zu ermöglichen, kann man z.B. das Pin placing tool verwenden (markiert mit 1 in Abbildung 15). Schließen Sie das Spectrum View Fenster und aktivieren Sie das **pin placing tool**. Setzen Sie nun mehrere pins in drei verschiedenen Landbedeckungsklassen (in meinem Fall sind es Wasser, Vegetation, und versiegelte Flächen). 
+
 Starten Sie dann erneut das Spectrum View-Tool und klicken Sie den **"Show spectra for all pins"** button (markiert mit 2 in Abbildung 15). Sie sollten nun eine ähnliche Darstellung sehen wie in Abbildung 15.
 
-Diese Darstellung ist bereits recht interessant, allerdings ist es nun noch etwas unbefriedigend, dass alle Spektren in derselben Farbe dargestellt werden und man daher die Landbedeckungsklassen nicht direkt unterscheiden kann. Um dies zu ermöglichen öffnen wir den **"Pin Manager"** über
+Diese Darstellung ist bereits recht interessant, allerdings ist es nun noch etwas unbefriedigend, dass alle Spektren in derselben Farbe dargestellt werden und man daher die Landbedeckungsklassen nicht direkt unterscheiden kann. Um eine solche Darstellung zu ermöglichen öffnen wir den **"Pin Manager"** über
 
 **View ⇒ Tool Windows ⇒ Pin manager**
 
@@ -151,16 +158,21 @@ Diese Darstellung ist bereits recht interessant, allerdings ist es nun noch etwa
 
 ![Abbildung 16: Aufrufen des Pin-Managers](Fig_16.png)
 
+**Abbildung 16: Aufrufen des Pin-Managers**
+
 Hier können nun die Farben der Pins angepasst werden (Abbildung 17).
 
 ![Abbildung 17: Der Pin-Manager](Fig_17.png)
 
- Es kann unter Umständen sich auch lohnen den Prozess nochmal von vorne zu beginnen in dem man zuerst nochmal alle Pins löscht - dafür wählt man entweder Option 1: den Mauscursor (markiert mit 1 in Abbildung 17) klickt auf einzelne Pins und löscht diese dann mit dem "entf"-Button auf dem Keyboard des Computers/Laptops oder Option 2: Man wählt alle Einträge im Pin-Manager aus und klickt dann den Mülleimer-Button (markiert mit 2 in Abbildung 17). Danach kann man dann die Pins neu setzen und z.B. dann jeweils erst alle Pins für eine Landbedeckungsklasse setzen, dann deren Farbe verändern und dann mit der zweiten Landbedeckungsklasse weitermachen.
+**Abbildung 17: Der Pin-Manager**
 
-Falls gewünscht, kann man die Labels der Pins auch noch anpassen (markiert mit 3 in Abbildung 17). Wenn die Pins der jeweiligen Landbedeckungsklassen nun jeweils eine eigene Farbe haben und man das **Spectrum View**-Tool wieder öffnet, sollte sich ein Eindruck ergeben wie in Abbildung 18 dargestellt.
+Es kann sich gegebenenfalls auch lohnen den Prozess nochmal von vorne zu beginnen in dem man zuerst nochmal alle Pins löscht - dafür wählt man entweder Option 1: den Mauscursor (markiert mit 1 in Abbildung 17) klickt auf einzelne Pins bzw. markiert mehrere Pins mit dem aufspannen eines Selektionsrechtecks und löscht diese dann mit dem "entf"-Button auf dem Keyboard des Computers/Laptops oder Option 2: Man wählt alle Einträge im Pin-Manager aus und klickt dann den Mülleimer-Button (markiert mit 2 in Abbildung 17). Danach kann man dann die Pins neu setzen und z.B. jeweils erst alle Pins für eine Landbedeckungsklasse setzen, dann deren Farbe verändern und dann mit der zweiten Landbedeckungsklasse weitermachen.
+
+Falls gewünscht, kann man die Labels der Pins auch noch anpassen in dem man die entsprechenden Labels selektiert und überschreibt (markiert mit 3 in Abbildung 17). Wenn die Pins der jeweiligen Landbedeckungsklassen nun jeweils eine eigene Farbe haben und man das **Spectrum View**-Tool wieder öffnet, sollte sich ein Eindruck ergeben wie in Abbildung 18 dargestellt.
 
 ![Abbildung 18: Das Spectrum-View Tool mit Pins in unterschiedlichen Farben ](Fig_18.png)
 
+**Abbildung 18: Das Spectrum-View Tool mit Pins in unterschiedlichen Farben**
 
 ### Ergänzung von Wellenlängeninformationen
 
@@ -170,7 +182,7 @@ Als nächsten Schritt, wollen wir uns nun auch Spektren für das Landsat-Satelli
 
 und bestätigen mit **"open"**.
 
-In der Regel informiert SNAP beim Laden des Landsat-Bildes darüber, dass es mehrere Möglichkeiten gibt das zu laden. In diesem Fall ist es egal welche Option verwendet wird und wir bestätigen einfach mit **"OK"**.
+In der Regel informiert SNAP beim Laden des Landsat-Bildes darüber, dass es mehrere Möglichkeiten gibt dieses Satellitenbild im GeoTiff-Format zu laden. In diesem Fall ist es egal welche Option verwendet wird und wir bestätigen einfach mit **"OK"**.
 
 Danach öffnen wir einen RGB-View von Landsat über den bekannten Weg:
 
@@ -180,9 +192,13 @@ ACHTUNG: Da bei unserem Landsat-Bild die Wellenlängen der Bänder nicht in den 
 
 ![Abbildung 19: Das Spectrum-View Tool mit Pins in unterschiedlichen Farben ](Fig_19.png)
 
+**Abbildung 19: Das Spectrum-View Tool mit Pins in unterschiedlichen Farben**
+
 Um diese Zuordnung so vorzunehmen, müssen wir wissen, welche Landsat-Bänder welchen Wellenlängenbereichen entsprechen und wir müssen auch wissen, welche Bänder in unserer konkreten Datei enthalten sind. Wer sich nicht daran erinnert: Bitte im Landsat-Tutorial vom letzten Termin nachschauen bzw. Abbildung 20 gibt auch nochmal eine Hilfestellunge, da wir diese Zahlen jetzt auch gleich benötigen werden. Eine weitere Hilfestellung: In unserem Datensatz sind die Landsat-Bänder 2-7 enthalten (gespeichert als Band 1-6 in der Tif-Datei, wobei die ursprünglichen Namensbezeichnungen erhalten blieben).
 
 ![Abbildung 20: Landsat 8 - Wellenlängenbereiche der Bänder ](Fig_20.png)
+
+**Abbildung 20: Landsat 8 - Wellenlängenbereiche der Bänder**
 
 Nun zum Problem: Wenn wir nun das Landsat-Produkt selektieren (bzw. am Besten auch nur das Landsat-Produkt überhaupt geladen haben) und wiederum das **Spectrum-View**-Tool aufrufen, so wird dieses zwar angezeigt, aber es werden keine Spektren angezeigt. Anstatt dessen wird nur ein Hinweis
  
@@ -192,18 +208,23 @@ dargestellt (Abbildung 21).
 
 ![Abbildung 21: Das Spectrum-View Tool mit Landsat-Daten ](Fig_21.png)
 
-Um das Anzeigen von Spektren auch für das Landsat Bild zu ermöglichen, müssen für jedes der Bänder des Bildes eine zentrale Wellenlänge sowie die Bandweite definiert werden. Hierfür müssen die Eigenschaften jeden Bandes aufgerufen werden (siehe Abbildung 22):
+**Abbildung 21: Das Spectrum-View Tool mit Landsat-Daten**
+
+Um das Anzeigen von Spektren auch für das Landsat Bild zu ermöglichen, müssen für jedes der Bänder des Bildes eine zentrale Wellenlänge sowie die Bandweite definiert werden. Hierfür müssen die Eigenschaften jeden Bandes aufgerufen werden (siehe Abbildung 22). Das geht über
 
 **rechtsklick auf das Band ==> "Properties"**
 
 ![Abbildung 22: Aufrufen der Bandeigenschaften](Fig_22.png)
 
+**Abbildung 22: Aufrufen der Bandeigenschaften**
 
 Im nun erscheinenden Fenster kann man sowohl die zentrale Wellenlänge (markiert mit 1 in Abbildung 23) als auch die Bandweite eingeben (markiert mit 2 in Abbildung 23).
 
 ![Abbildung 22: Eintragung der Wellenlänge und Bandweite](Fig_22.png)
 
-Hierbei muss darauf geachtet werden, dass die Werte in Nanometer eingegeben werden müssen. In Abbildung 20 sehen wir, dass das Landsat Band 2 den Wellenlängenbereich zwischen 0.45-0.51 Mikrometer abdeckt. Dies entspricht dem Bereich 450 - 510 Nanometer. Die zentrale Wellenlänge wäre demnach bei 480 Nanometer und die Bandbreite wäre 510 minus 450 = 60 Nanometer. Diese Werte sollten nun für alle 6 Bänder in dieser Form eingetragen werden.
+**Abbildung 22: Eintragung der Wellenlänge und Bandweite**
+
+Hierbei muss darauf geachtet werden, dass die Werte in Nanometer eingegeben werden müssen. In Abbildung 20 sehen wir, dass das Landsat Band 2 den Wellenlängenbereich zwischen 0.45-0.51 Mikrometer abdeckt. Dies entspricht dem Bereich 450 - 510 Nanometer. Die zentrale Wellenlänge wäre demnach bei 480 Nanometer und die Bandbreite wäre: 510 minus 450 = 60 Nanometer. Diese Werte sollten nun in dieser Form für alle 6 Bänder berechnet und eingetragen werden.
 
 Danach sollte die "Spectrum-View"-Ansicht auch für das Landsat-Bild funktionieren.
 
@@ -213,6 +234,6 @@ Danach sollte die "Spectrum-View"-Ansicht auch für das Landsat-Bild funktionier
 
 2. In unserem aktuellen Sentinel-2 Bild sind 13 Spektralkanäle enthalten. Von diesen 13 Kanälen haben 3 Kanäle/Bänder eine deutlich gröbere Auflösung von 60 m, wohingegen die anderen 10 Kanäle/Bänder eine Auflösung von 10 bzw. 20 m haben. Erstellen Sie ein Subset des Sentinel-2 Bildes in SNAP und behalten Sie nur die Kanäle mit 10 bzw. 20 m Auflösung. Sie finden das Subset-Tool in SNAP unter **Raster ⇒ Subset**. (Wer sich nicht mehr erinnert findet hier auch nochmal die Erläuterung von der früheren Übung (ACHTUNG: nur der erste Teil ist relevant, das resampling muss nicht unbedingt gemacht werden): https://github.com/fabianfassnacht/BOKU_Uebung_2_Export_Sentinel_2/blob/main/Tag_2_Export.md)
 
-3. Für dieses neue Bild mit nur 10 Kanälen, setzen sie bitte jeweils 10 Pins (wie heute gelernt) für die Landbedeckungsklassen "Wiese/Grasland"; "Wasser"; "Wald" und "urbanes Gebiet/versiegelte Fläche" und erstellen Sie eine Abbildung, die die Spektren der Landbedeckungsklassen in verschiedenen Farben zeigt.
+3. Für dieses neue Bild mit nur 10 Kanälen/Bändern, setzen sie bitte jeweils 10 Pins (wie heute gelernt) für die Landbedeckungsklassen "Wiese/Grasland"; "Wasser"; "Wald" und "urbanes Gebiet/versiegelte Fläche" und erstellen Sie eine Abbildung, die die Spektren der Landbedeckungsklassen in verschiedenen Farben zeigt.
 
 4. Wiederholen Sie die Aufgabe 3. mit dem Landsat-Bild. Was fällt Ihnen auf, wenn Sie die Spektren von Landsat und Sentinel-2 vergleichen? 
