@@ -23,6 +23,7 @@ Als ersten Schritt laden wir die Sentinel-2 Szene nach SNAP. Dafür gibt es vers
 
 ![Abbildung 1: Laden des Sentinel-2 Satellitenbildes](Fig_01.png)
 
+**Abbildung 1: Laden des Sentinel-2 Satellitenbildes**
 
 Dann navigieren wir zum Ordner in dem die Sentinel-2 Daten gespeichert sind und wählen die Datei 
 
@@ -30,22 +31,29 @@ Dann navigieren wir zum Ordner in dem die Sentinel-2 Daten gespeichert sind und 
 
 und bestätigen mit **"open"**.
 
-Wir öffnen nur die Ordnerstrukturen des geladenen Bildes (wie bereits in früheren Tutorials), und lassen uns alle Bänder des Bildes anzeigen. Wir öffnen die Visualisierung für ein einzelnes Band in dem wir das Band 5 doppelklicken (Abbildung 2 markiert mit 1).
+Wir öffnen nur die Ordnerstrukturen des geladenen Bildes (wie bereits in früheren Tutorials), und lassen uns alle Bänder des Bildes anzeigen. Wir öffnen die Visualisierung für ein einzelnes Band in dem wir das Band 5 doppelklicken (markiert mit 1 in Abbildung 2).
 
 ![Abbildung 2: Laden von Band 5 des Sentinel-2 Satellitenbildes](Fig_02.png)
 
-Danach wählen wir den **"Colour manipulation"** aus, um die Visualisierungseinstellungen aufzurufen (markiert mit 2 in Abbildung 2). 
+**Abbildung 2: Laden von Band 5 des Sentinel-2 Satellitenbildes**
 
-In diesem tab finden sich diverse Einstellungen, um die Visualisierung der Rasterdaten anzupassen. Es ist hier von zentraler Bedeutung zu verstehen, dass die eigentlichen Daten des geladenen Bildes (Pixelwerte) bei Veränderung der Visualisierungs-Einstellungen nicht verändert werden (außer wenn eine Normalisierung angewandt wird, dies ist aber bei Satellitenbildern selten zu empfehlen) sondern nur die Art und Weise wie die Daten in einen visuellen Eindruck am Monitor übersetzt werden.
+Danach wählen wir das Menüfeld **"Colour manipulation"** aus, um die Visualisierungseinstellungen aufzurufen (markiert mit 2 in Abbildung 2). 
+
+In diesem tab finden sich diverse Einstellungen, um die Visualisierung der Rasterdaten anzupassen. Es ist hier von zentraler Bedeutung zu verstehen, dass die eigentlichen Daten des geladenen Bildes (Pixelwerte) bei Veränderung der Visualisierungs-Einstellungen nicht verändert werden (außer wenn eine Normalisierung angewandt wird - dies ist aber bei Satellitenbildern selten zu empfehlen) sondern nur die Art und Weise wie die Daten in einen visuellen Eindruck am Monitor übersetzt werden.
 
 Wir schauen uns nun erst einmal die verfügbaren Visualisierungsoptionen in den Basiseinstellungen (markiert mit 1 in Abbildung 3) an.
 
 ![Abbildung 3: Visualisierungseinstellungen in SNAP](Fig_03.png)
 
-Zwei erste Optionen, die sehr leicht anzuwenden sind ist Übersetzung der Pixelwerte in eine logaritmische Skala. Wenn wir den dafür vorgesehenen **log10-Button** (markiert mit 3 in Abbildung 3) drücken, sehen wir, dass sich der visuelle Eindruck des dargestellten Bildes verändert. Es erscheint ingesamt heller. In diesem konkreten Fall ist diese Visualisierung keine große Verbesserung und wir können die Standarteinstellungen wieder herstellen in dem wir auf den  **Reset-Button** drücken (markiert mit 4 in Abbildung 3). Der log10-Button ist vor allem für die Darstellung von Radar-Daten hilfreich, da da die Messwerte häufig nicht linear skaliert sind.
+**Abbildung 3: Visualisierungseinstellungen in SNAP**
 
-Als nächsten Schritt, werden wir die Spannweite der visualisierten Pixelwerte (**Range** - markiert mit 2 in Abbildung 3) verändern. Hierfür können wir z.B. den Max-Wert **von 0.16xxx auf 0.26** verändern. Dies hat zur Folge, dass das Bild insgesamt dunkler erscheint. Was hier konkret passiert ist, ist dass durch die Vergrößerung der Range auf einen Bereich in dem sogut wie keine Pixel mehr entsprechende Werte aufweisen (es gibt kaum Pixel mit einem Pixelwert größer 0.16, deswegen wurden die Standartsettings von SNAP so gewählt) werden die existierenden "hellen" Pixel (die Pixel mit den höchsten Werten im Bild) nun mit einer etwas dunkleren Grauton dargestellt, wohingegen die sehr hellen Grautöne (nahe weiss) gar nicht mehr vorkommen, da diese Werte nun für Pixel mit Werten nahe 0.26 reserviert sind, die faktisch sogut wie nicht vorkommen im Bild (mehr Infos dazu kommen gleich noch).
+Wir beginnen mit zwei Optionen, die sehr leicht anzuwenden sind. Die erste ist die Übersetzung der Pixelwerte in eine logaritmische Skala. Wenn wir den dafür vorgesehenen **log10-Button** (markiert mit 3 in Abbildung 3) drücken, sehen wir, dass sich der visuelle Eindruck des dargestellten Bildes verändert. Es erscheint insgesamt heller. In diesem konkreten Fall ist diese Visualisierung keine große Verbesserung und wir können die Standarteinstellungen wieder herstellen in dem wir auf den **Reset-Button** drücken (markiert mit 4 in Abbildung 3). Der log10-Button ist vor allem für die Darstellung von Radar-Daten hilfreich, da bei Radar-Daten die Messwerte häufig nicht linear skaliert sind.
+
+Als nächsten Schritt, werden wir die Spannweite der visualisierten Pixelwerte (**Range** - markiert mit 2 in Abbildung 3) verändern. Hierfür können wir z.B. den Max-Wert **von 0.16xxx auf 0.26** verändern. Dies hat zur Folge, dass das Bild insgesamt dunkler erscheint. Durch die Vergrößerung der Range auf einen Bereich in dem sogut wie keine Pixel mehr entsprechende Werte aufweisen (es gibt kaum Pixel mit einem Pixelwert größer 0.16, deswegen wurden die Standartsettings von SNAP so gewählt) werden die existierenden "hellen" Pixel (die Pixel mit den höchsten Werten im Bild) nun mit einer etwas dunkleren Grauton dargestellt, wohingegen die sehr hellen Grautöne (nahe weiss) gar nicht mehr vorkommen, da diese Werte nun für Pixel mit Werten nahe 0.26 reserviert sind, die faktisch sogut wie nicht vorkommen im Bild (mehr Infos dazu kommen gleich noch).
+
 ![Abbildung 4:  Visualisierung eines Donauauschnittes mit einer normalen Visualisierungseinstellung](Fig_04.png)
+
+**Abbildung 4:  Visualisierung eines Donauauschnittes mit einer normalen Visualisierungseinstellung**
 
 Diese Einstellung kann in manchen Fällen tatsächlich sehr relevant sein. Ein Beispiel hierfür sind Gewässer. Wie wir bereits in der Vorlesung gehört haben erscheinen Gewässer in Satellitenbildern sehr dunkel im Vergleich zu anderen Landbedeckungsklassen, da Wasser nur sehr wenig elektromagnetische Strahlung reflektiert. In unserem Satellitenbild erscheint z.B. die Donau in den aktuellen Visualsierungseinstellungen (Range zwischen 0.046xx und 0.26) homogen sehr dunkel (in Abbildung 4 wurde an einen Ausschnitt der Donau herangezoomt). Wenn wir nun die Visualisierungeinstellungen auf sehr kleine Pixelwerte einschränken, in meinem Fall zwischen Werte von **0.03 und 0.05** so ändert sich dieser Eindruck stark. Plötzlich ist die Donau nicht mehr homogen schwarz sondern es werden Muster und Gradienten sichtbar. Was ebenfalls auffällt ist, dass fast alle umgebenden Gebiete, die nicht Wasser repräsentieren, nun in weiss dargestellt sind. Dies ist plausibel, da ihre Pixelwerte höher als der gewählte Maximalwert von 0.05 liegen. 
 
