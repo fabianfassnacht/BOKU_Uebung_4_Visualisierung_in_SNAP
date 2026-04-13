@@ -11,7 +11,11 @@ In diesem Teil des Tutorial lernen Sie wie Sie in SNAP die Visualisierungseinste
 ### Verwendete Daten
 Für dieses Tutorial werden wir ein Subset einer Sentinel-2 Szene sowie ein Subset einer Landsat-Szene jeweils von Wien verwenden.
 
-Sie können die beiden Dateien hier herunterladen:
+Sie können die beiden Dateien hier oder in BOKU learn herunterladen:
+
+https://drive.google.com/file/d/12qllPsLwvfuCvMpHMvM77j4aMYqkybCR/view?usp=sharing
+
+
 
 ### Die Visualisierungseinstellungen in SNAP
 
