@@ -224,7 +224,7 @@ Um das Anzeigen von Spektren auch für das Landsat Bild zu ermöglichen, müssen
 
 Im nun erscheinenden Fenster kann man sowohl die zentrale Wellenlänge (markiert mit 1 in Abbildung 23) als auch die Bandweite eingeben (markiert mit 2 in Abbildung 23).
 
-![Abbildung 22: Eintragung der Wellenlänge und Bandweite](Fig_22.png)
+![Abbildung 22: Eintragung der Wellenlänge und Bandweite](Fig_23.png)
 
 **Abbildung 22: Eintragung der Wellenlänge und Bandweite**
 
